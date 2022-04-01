@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="MlemMlem">absd</div>
+    <style>
+      #MlemMlem {
+        display: inherit;
+      }
+    </style>
+    <script>
+      function Mlem() {
+        // LINK API
+        let APIDetailURL =
+          "https://script.google.com/macros/s/AKfycbylAUh-TJM_p1hl-eRKXw1WbfF5-sC-qFda0y8guljVdBnEHVpsH0WBIaeNsIiSpDQZLQ/exec";
+
+        //   LẤY DATA
+        fetch(APIDetailURL)
+          .then((DetailData) => DetailData.json())
+          .then((FinalDetailData) => {
+            console.log(FinalDetailData[0].Col1);
+            let MlemMlem = document.querySelector("#MlemMlem");
+            MlemMlem.innerHTML = FinalDetailData[0].Col1;
+            // LOAD XONG :))
+          });
+      }
+      Mlem();
+    </script>
+  </body>
+</html>
