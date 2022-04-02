@@ -39,6 +39,36 @@
   color: #e9e7e7;
 }
 
+iframe::-webkit-scrollbar {
+  width: 2px;
+  -webkit-transition: width 0.5s ease-out;
+  transition: width 0.5s ease-out;
+  -webkit-transform: translateX(5px);
+          transform: translateX(5px);
+}
+
+iframe::-webkit-scrollbar:hover {
+  width: 15px;
+}
+
+iframe::-webkit-scrollbar-track {
+  background: #e9e7e756;
+}
+
+iframe::-webkit-scrollbar-thumb {
+  background: #151515;
+}
+
+iframe::-moz-selection {
+  background: #292929;
+  color: #e9e7e7;
+}
+
+iframe::selection {
+  background: #292929;
+  color: #e9e7e7;
+}
+
 body,
 html {
   max-width: 100vw;
@@ -193,7 +223,6 @@ html {
 .Form {
   width: 100%;
   height: 0;
-  border-radius: 16px;
   overflow: hidden;
   -webkit-transition: all 0.8s cubic-bezier(0.25, 0, 0, 1);
   transition: all 0.8s cubic-bezier(0.25, 0, 0, 1);
@@ -219,5 +248,11 @@ h1 {
   font-family: "Barlow Condensed";
   text-transform: uppercase;
   font-size: 4.2rem;
+}
+
+@media screen and (max-width: 768px) {
+  #main_scroll {
+    position: absolute;
+  }
 }
 /*# sourceMappingURL=style.css.map */
