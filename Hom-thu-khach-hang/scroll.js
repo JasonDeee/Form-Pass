@@ -17,11 +17,11 @@ const wheelValidate = (e) => {
     ? e.wheelDeltaY === -3 * e.deltaY
     : e.deltaMode === 0;
 
-  Force = isTouchPad ? 800 : 70;
+  Force = isTouchPad ? 700 : 70;
 };
 
 const touch = () => {
-  Force = 800;
+  Force = 700;
 };
 //
 
