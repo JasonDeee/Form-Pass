@@ -177,6 +177,10 @@ html {
   overflow: hidden;
 
   transition: all 0.8s cubic-bezier(0.25, 0, 0, 1);
+
+  iframe {
+    overflow-x: hidden;
+  }
 }
 
 .FormActive {

@@ -232,6 +232,10 @@ html {
   transition: all 0.8s cubic-bezier(0.25, 0, 0, 1);
 }
 
+.Form iframe {
+  overflow-x: hidden;
+}
+
 .FormActive {
   margin-top: 12px;
   height: 50vh;
