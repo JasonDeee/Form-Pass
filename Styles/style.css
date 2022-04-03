@@ -101,6 +101,10 @@ html {
   left: 0;
 }
 
+.BGImage img {
+  width: 100vw;
+}
+
 .scroller {
   position: fixed;
   top: 0;

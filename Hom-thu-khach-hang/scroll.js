@@ -2,6 +2,9 @@
 //
 // Hi There, Have a good day
 
+console.log("Available Height: " + window.screen.availHeight);
+console.log("Available Width: " + window.screen.availWidth);
+
 const body = document.body;
 const main = document.getElementById("main_scroll");
 const background = document.querySelector(".background");
