@@ -260,5 +260,11 @@ h1 {
   #main_scroll {
     position: absolute;
   }
+  .BGImage {
+    height: 100vh;
+  }
+  .BGImage img {
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */
