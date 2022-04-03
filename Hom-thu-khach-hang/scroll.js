@@ -82,13 +82,13 @@ function render() {
 
   dy = Math.floor(dy * 100) / 100;
 
-  if (window.innerWidth > 768) {
+  if (window.innerWidth > 1081) {
     background.style.transform = `translateY(-${dy / 6}px)`;
 
     main.style.transform = `translateY(-${dy}px)`;
-  } else if (window.innerWidth < 768) {
+  } else if (window.innerWidth < 1081) {
     //
-    background.style.transform = `translateY(-${dy / 40}px)`;
+    background.style.transform = ``;
 
     main.style = ``;
   }

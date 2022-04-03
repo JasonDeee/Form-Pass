@@ -131,15 +131,15 @@ html {
 .Morphlayout {
   width: 68vw;
   min-height: 120px;
-  -webkit-backdrop-filter: blur(50px);
-          backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
   border-radius: 32px;
   margin-bottom: 128px;
   border: 2px solid #ffffff56;
   -webkit-box-shadow: 2vw 2vw 4vw #00000056;
           box-shadow: 2vw 2vw 4vw #00000056;
   padding: 32px;
-  background: radial-gradient(100.19% 404.53% at 4.28% 4.65%, rgba(255, 255, 255, 0.61) 0%, rgba(255, 255, 255, 0.11) 100%);
+  background: radial-gradient(100.19% 404.53% at 4.28% 4.65%, rgba(255, 255, 255, 0.61) 0%, rgba(255, 255, 255, 0.04) 100%);
 }
 
 .Hover {
@@ -260,11 +260,26 @@ h1 {
   #main_scroll {
     position: absolute;
   }
+  .Morphlayout {
+    width: 95vw;
+  }
   .BGImage {
     height: 100vh;
+    background-image: url(../Hom-thu-khach-hang/Images/pexels-lilartsy-3278767.jpg);
   }
   .BGImage img {
     display: none;
+  }
+  #Header p {
+    margin-top: 32px;
+    max-width: 62vw;
+  }
+  h1 {
+    font-size: 2.4rem;
+  }
+  .Hover h3 {
+    font-weight: 800;
+    font-size: 1.1rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
