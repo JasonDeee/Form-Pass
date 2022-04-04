@@ -1,0 +1,15 @@
+.title-section {
+  display: none;
+}
+
+.background_product_cat {
+  display: none;
+}
+.elementor-column {
+  transition: all 0.8s cubic-bezier(0.25, 0, 0, 1);
+  cursor: pointer;
+}
+
+.elementor-column:hover {
+  background: #e9e7e7;
+}
