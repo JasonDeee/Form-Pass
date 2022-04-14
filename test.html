@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theme Button</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: "Exo", sans-serif;
+        color: #151515;
+      }
+      body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+      }
+
+      .button {
+        background: #8e724b;
+        width: auto;
+        height: 64px;
+        padding: 32px;
+        border-radius: 34px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+
+        transition: all 0.88s cubic-bezier(0.25, 0, 0, 1);
+        cursor: pointer;
+      }
+      .Strokebutton {
+        background: transparent;
+        border: solid 2px #8e724b;
+      }
+      .SliderButton {
+        width: 64px;
+        height: 64px;
+      }
+      .Strokebutton:hover {
+        background: #8e724b;
+      }
+
+      .button .ButtonIcon {
+        width: 0;
+        height: 0;
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        margin-left: -8px;
+        margin-top: -8px;
+      }
+
+      .button span {
+        font-size: 1.2rem;
+        font-weight: 600;
+        transition: all 0.88s cubic-bezier(0.25, 0, 0, 1);
+        color: #151515;
+        transform: translateY(50%);
+
+        max-width: 0px;
+        white-space: nowrap;
+        margin-left: 0;
+        pointer-events: none;
+      }
+      .button:hover span {
+        max-width: 10ch;
+        color: white;
+        margin-left: 32px;
+        transform: translateY(0);
+      }
+
+      /* CODE NHU L */
+      .button svg {
+        width: 100%;
+        overflow: visible;
+      }
+      .button .ButtonIconSVG {
+        fill: white;
+        transition: all 0.88s cubic-bezier(0.25, 0, 0, 1);
+      }
+      .Strokebutton .ButtonIconSVG {
+        fill: #8e724b;
+      }
+      .Strokebutton:hover .ButtonIconSVG {
+        fill: white;
+      }
+
+      /* Sldier Button */
+
+      .SliderButton {
+        background: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        overflow: visible;
+        width: auto;
+        cursor: pointer;
+      }
+
+      .SliderButton .overlay {
+        background: #8e724b;
+        position: absolute;
+        width: 64px;
+        height: 64px;
+        border-radius: 34px;
+        z-index: -1;
+        transition: all 0.88s cubic-bezier(0.25, 0, 0, 1);
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+
+      .SliderButton .PrevButton,
+      .SliderButton .NextButton {
+        transition: all 0.88s cubic-bezier(0.25, 0, 0, 1);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 2px;
+        background: #151515;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        z-index: 2;
+
+        transform: translateY(16px);
+
+        position: relative;
+      }
+      .SliderButton .PrevButton::before,
+      .SliderButton .NextButton::before {
+        content: "";
+        width: 100%;
+        height: 32px;
+
+        position: absolute;
+        transition: all 0.88s cubic-bezier(0.25, 0, 0, 1);
+      }
+      .SliderButton:hover .PrevButton::before,
+      .SliderButton:hover .NextButton:before {
+        height: 64px;
+      }
+
+      .SliderButton .PrevButton {
+        width: 32px;
+        margin-right: 4px;
+        margin-left: 16px;
+      }
+      .SliderButton .NextButton {
+        width: 64px;
+        margin-left: 4px;
+      }
+
+      .SliderButton .PrevButton::after,
+      .SliderButton .NextButton::after {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-top: solid 2px #151515;
+        border-right: solid 2px #151515;
+        transform-origin: center;
+      }
+      .SliderButton .PrevButton::after {
+        left: 0;
+        transform: rotate(-135deg);
+      }
+      .SliderButton .NextButton::after {
+        right: 0;
+        transform: rotate(45deg);
+      }
+      .SliderButton:hover .PrevButton,
+      .SliderButton:hover .NextButton {
+        transform: translateY(0);
+      }
+
+      .NextButton:hover {
+        margin-left: 36px;
+      }
+      .NextButton:hover ~ .overlay {
+        width: 128px;
+        right: -36px;
+        left: 56px;
+      }
+      .PrevButton:hover {
+        width: 64px;
+        margin-left: 0;
+        margin-right: 36px;
+      }
+      .PrevButton:hover ~ .NextButton {
+        width: 32px;
+      }
+      .PrevButton:hover ~ .overlay {
+        width: 128px;
+        left: -36px;
+        right: 36px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="button">
+      <div class="ButtonIcon">
+        <svg
+          width="26"
+          height="26"
+          viewBox="0 0 26 26"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="ButtonIconSVG"
+            d="M20.3272 9.97538L16.0248 5.67306L18.893 2.80485C19.5793 2.07417 19.6481 2.07991 20.3272 2.80485L23.1954 5.67306C23.8931 6.38079 23.939 6.36932 23.1954 7.10717L20.3272 9.97538ZM9.57124 20.7312C8.09912 19.2576 5.68621 16.8462 5.26888 16.4289L14.5907 7.10717L18.893 11.4095L9.57124 20.7312ZM2.21635 23.7837L3.83476 17.863L8.13712 22.1653L2.21635 23.7837ZM25.3466 4.95601L21.0442 0.653687C20.1766 -0.213947 19.0515 -0.221835 18.176 0.653687L2.2479 16.5816L0.0522641 24.5136C-0.182215 25.6143 0.385697 26.1822 1.48639 25.9477L9.41851 23.7521L25.3466 7.82422C26.2221 6.9487 26.2135 5.82436 25.3466 4.95601Z"
+          />
+        </svg>
+      </div>
+
+      <span>Yêu cầu tư vấn</span>
+    </div>
+    <div class="button Strokebutton">
+      <div class="ButtonIcon">
+        <svg
+          width="26"
+          height="26"
+          viewBox="0 0 26 26"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="ButtonIconSVG"
+            d="M20.3272 9.97538L16.0248 5.67306L18.893 2.80485C19.5793 2.07417 19.6481 2.07991 20.3272 2.80485L23.1954 5.67306C23.8931 6.38079 23.939 6.36932 23.1954 7.10717L20.3272 9.97538ZM9.57124 20.7312C8.09912 19.2576 5.68621 16.8462 5.26888 16.4289L14.5907 7.10717L18.893 11.4095L9.57124 20.7312ZM2.21635 23.7837L3.83476 17.863L8.13712 22.1653L2.21635 23.7837ZM25.3466 4.95601L21.0442 0.653687C20.1766 -0.213947 19.0515 -0.221835 18.176 0.653687L2.2479 16.5816L0.0522641 24.5136C-0.182215 25.6143 0.385697 26.1822 1.48639 25.9477L9.41851 23.7521L25.3466 7.82422C26.2221 6.9487 26.2135 5.82436 25.3466 4.95601Z"
+          />
+        </svg>
+      </div>
+
+      <span>Yêu cầu tư vấn</span>
+    </div>
+
+    <div class="SliderButton">
+      <div class="PrevButton"></div>
+      <div class="NextButton"></div>
+      <span class="overlay"></span>
+    </div>
+  </body>
+</html>
